@@ -10,6 +10,17 @@ export class Hill {
     resize(stageWidth, stageHeight) {
         this.stageHeight = stageHeight;
         this.stageWidth = stageWidth;
+
+        this.points = []; // for 포인트 저장
+        this.gap = Match.ceil(this.stageWidth / (this.total - 2));
+        // stage보다 넓게 언덕을 그려(-2) 양이 자연스럽게 걸어올수있도록 구현 (2:15)
+
+        for (let i = 0; i < this.total; i++){
+            this.points[i] = {
+                x : i*this.gap,
+                y : this.getY()
+            };
+        }
     }
     draw(ctx) {
         
