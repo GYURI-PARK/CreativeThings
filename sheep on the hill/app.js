@@ -17,7 +17,8 @@ class App {
             new Hill('#ff59c2', 0.5, 8),
             new Hill('#ff4674', 1.4, 6)
         ];
-        
+        this.sheepController = new SheepController();
+
         window.addEventListener('resize', this.resize.bind(this), false);
         this.resize();
 
@@ -37,7 +38,7 @@ class App {
             this.hills[i].resize(this.stageWidth, this.stageHeight);
         }
 
-        this.SheepController.resize(this.stageWidth, this.stageHeight);
+        this.sheepController.resize(this.stageWidth, this.stageHeight);
 
     } // 스크린 사이즈를 가져오기 위한 resize 이벤트
 
@@ -50,7 +51,7 @@ class App {
         for (let i = 0; i < this.hills.length; i++){
             dots = this.hills[i].draw(this.ctx);
         }
-        this.SheepController.draw(this.ctx, t, dots);
+        this.sheepController.draw(this.ctx, t, dots);
         // hill class 에서 받은 언덕의 좌표를 sheepController로 넘겨줌
         // 언덕 마지막에 양이 나타나야하므로
         // t : FPS를 위한 타임스탬프를 파라미터로 넘겨줌

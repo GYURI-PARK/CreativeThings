@@ -1,6 +1,7 @@
 // 양떼 관리 class
 
 // sheep class import
+
 import {
     Sheep
 } from "./sheep.js";
@@ -32,15 +33,14 @@ export class SheepController {
     }
 
     addSheep() {
-        
         this.items.push(
-            new SheepController(this.img, this.stageWidth),
+            new Sheep(this.img, this.stageWidth),
         );
     }
 
     // 함수로 양 그리기
     draw(ctx, t, dots) {
-        if (this,isLoaded) {
+        if (this.isLoaded) {
             this.cur += 1;
             if (this.cur > 200) {
                 this.cur = 0;
