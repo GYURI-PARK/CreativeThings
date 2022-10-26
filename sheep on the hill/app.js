@@ -6,11 +6,17 @@ import {
     SheepController
 } from './sheep-controller.js';
 
+import {
+    Sun
+} from './sun.js';
+
 class App {
     constructor() {
         this.canvas = document.createElement('canvas');
         this.ctx = this.canvas.getContext("2d");
         document.body.appendChild(this.canvas);
+
+        this.sun = new Sun();
 
         this.hills = [
             new Hill('#fd6bea', 0.2, 12),
@@ -34,6 +40,8 @@ class App {
         this.ctx.scale(2,2);
         // canvas 사이즈를 두 배로 해줌으로써 retina display에서도 선명하게 보일 수 있도록 해준다.
 
+        this.sun.resize(this.stageWidth, this.stageHeight);
+
         for (let i = 0; i < this.hills.length; i++){
             this.hills[i].resize(this.stageWidth, this.stageHeight);
         }
@@ -47,6 +55,9 @@ class App {
 
         this.ctx.clearRect(0, 0, this.stageWidth, this.stageHeight);
         // canvas 초기화
+
+        this.sun.draw(this.ctx, t);
+        
         let dots; // 언덕 좌표
         for (let i = 0; i < this.hills.length; i++){
             dots = this.hills[i].draw(this.ctx);
