@@ -66,7 +66,7 @@ export class Hill {
         return dots; // 양의 좌표를 리턴값으로 넘겨주기
         
     } // point배열을 가져와 quadraticCurveTo를 사용해 언덕그리기
-    geyY() {
+    getY() {
         const min = this.stageHeight / 8;
         const max = this.stageHeight - min;
         return min + Math.random() * max;

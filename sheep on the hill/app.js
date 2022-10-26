@@ -37,9 +37,8 @@ class App {
     animate(t) {
         requestAnimationFrame(this.animate.bind(this));
 
-        this.ctx.clearRect(0, 0, this.stageWidth, this,stageHeight);
+        this.ctx.clearRect(0, 0, this.stageWidth, this.stageHeight);
         // canvas 초기화
-
         let dots;
         for (let i = 0; i < this.hills.length; i++){
             dots = this.hills[i].draw(this.ctx);
