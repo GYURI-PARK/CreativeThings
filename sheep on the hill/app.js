@@ -2,6 +2,10 @@ import {
     Hill
 } from'./hill.js';
 
+import {
+    SheepController
+} from './sheep-controller.js';
+
 class App {
     constructor() {
         this.canvas = document.createElement('canvas');
@@ -32,6 +36,9 @@ class App {
         for (let i = 0; i < this.hills.length; i++){
             this.hills[i].resize(this.stageWidth, this.stageHeight);
         }
+
+        this.SheepController.resize(this.stageWidth, this.stageHeight);
+
     } // 스크린 사이즈를 가져오기 위한 resize 이벤트
 
     animate(t) {
@@ -39,10 +46,15 @@ class App {
 
         this.ctx.clearRect(0, 0, this.stageWidth, this.stageHeight);
         // canvas 초기화
-        let dots;
+        let dots; // 언덕 좌표
         for (let i = 0; i < this.hills.length; i++){
             dots = this.hills[i].draw(this.ctx);
         }
+        this.SheepController.draw(this.ctx, t, dots);
+        // hill class 에서 받은 언덕의 좌표를 sheepController로 넘겨줌
+        // 언덕 마지막에 양이 나타나야하므로
+        // t : FPS를 위한 타임스탬프를 파라미터로 넘겨줌
+        // requestAnimationFrame 함수는 타임스탬프를 파라미터로 넘겨 받음
     }
 }
 

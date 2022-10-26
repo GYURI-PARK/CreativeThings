@@ -31,7 +31,18 @@ export class Hill {
 
         let dots = [];
         // 양의 좌표값 저장
-        ctx.x += this.speed;
+        cur.x += this.speed;
+
+        if (cur.x > -this.gap){
+            this.points.unshift({
+                x: -(this.gap * 2),
+                y: this.getY()
+            });
+        } else if (cur.x > this.stageWidth + this.gap) {
+            this.points.splice(-1);
+        } // 언덕 끊기지 않게 + 화면에서 사라지면 배열에서 빼주기
+
+
         ctx.moveTo(cur.x, cur.y);
 
         let prevCx = cur.x;
