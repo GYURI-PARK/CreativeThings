@@ -45,7 +45,8 @@ export class Sheep {
     animate(ctx, dots){
         // 양의 중심점을 하단 중앙으로 잡아야 언덕 선을 따라간다.
         this.x -= this.speed; // 양의 x값을 스테이지 넓이에 양에 넓이를 더한 만큼 초기지정
-        this.y = 550;
+        const closest = this.getY(this.x, dots);
+        this.y = closest.y; // x값과 가장 맞는 y값 대입
 
         ctx.save();
         ctx.translate(this.x, this.y);
@@ -64,6 +65,38 @@ export class Sheep {
         );
         ctx.restore(); // 캔버스 복귀
     }
+
+    // 여러개의 연결된 곡선 가운데 어떤 곡선이 x값에 해당하는지 확인하는 함수
+    getY(x, dots){
+        for(let i = 1; i<dots.length; i++){
+            if(x >= dots[i].x1 && x <= dots[i].x3){
+                return this.getY2(x, dots[i]);
+            }
+        }
+        return {
+            y: 0,
+            rotation: 0
+        };
+    }
+
+    // 양의 x값에 맞는 곡선의 y를 찾아보고 리턴해주는 함수
+    getY2(x, dot) {
+        const total = 200;
+        let pt = this.getPointOnQuad(dot.x1, dot.y1, dot.x2, dot.y2, dot.x3, dot.y3, 0);
+        let prevX = pt.x;
+        for (let i = 1; i < total; i++){
+            const t = i / total;
+            pt = this.getPointOnQuad(dot.x1, dot.y1, dot.x2, dot.y2, dot.x3, dot.y3, t);
+
+            if (x>= prevX && x <= pt.x) {
+                return pt;
+            }
+            prevX = pt.x;
+        }
+        return pt;
+    }
+
+
     // 비율에 따른 좌표 찾기 -> 양이 언덕을 따라갈 수 있도록
     getQuadValue(p0, p1, p2, t) {
         return (1-t) * (1-t) * p0 + 2 * (1-t) * t * p1 + t * t * p2;
