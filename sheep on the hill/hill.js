@@ -39,7 +39,7 @@ export class Hill {
 
         for (let i = 1; i < this.points.length; i++){
             cur = this.points[i];
-
+            cur.x += this.speed;
             const cx = (prev.x + cur.x) / 2;
             const cy = (prev.y + cur.y) / 2;
             ctx.quadraticCurveTo(prev.x, prev.y, cx, cy);
