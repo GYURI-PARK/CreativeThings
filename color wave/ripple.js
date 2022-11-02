@@ -14,10 +14,17 @@ export class Ripple {
     }
 
     start(x,y) {
-
+        this.x = x;
+        this.y = y;
+        this.radius = 0;
+        this.maxRadius = this.getMax(x,y);
     }
 
     animate() {
+
+    }
+
+    getMax(x, y) {
         
     }
 }
