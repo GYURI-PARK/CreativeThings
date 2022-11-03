@@ -1,3 +1,5 @@
+import {Ripple} from './ripple.js';
+
 class App {
     constructor() {
         this.canvas = document.createElement('canvas');
@@ -5,6 +7,8 @@ class App {
         this.ctx = this.canvas.getContext('2d');
 
         this.pixelRatio = window.devicePixelRatio > 1 ? 2 : 1;
+
+        this.ripple = new Ripple();
 
         window.addEventListener('resize', this.resize.bind(this), false);
         this.resize();
@@ -32,6 +36,8 @@ class App {
         this.canvas.width = this.stageWidth * this.pixelRatio;
         this.canvas.height = this.stageHeight * this.pixelRatio;
         this.ctx.scale(this.pixelRatio, this.pixelRatio);
+
+        this.ripple.resize(this.stageWidth, this.stageHeight);
 
         if(this.isLoaded) {
             this.drawImage();
@@ -68,6 +74,8 @@ class App {
             this.imgPos.x, this.imgPos.y,
             this.imgPos.width, this.imgPos.height,
         );
+
+        window.requestAnimationFrame(this.animate.bind(this));
 
     }
 }
