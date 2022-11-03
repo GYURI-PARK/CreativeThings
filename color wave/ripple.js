@@ -21,13 +21,13 @@ export class Ripple {
         this.maxRadius = this.getMax(x,y);
     }
 
-    animate() {
+    animate(ctx) {
         if (this.radius < this.maxRadius) {
             this.radius += this.speed;
         }
 
         ctx.beginPath();
-        ctx.fillStyle = '#00ff00';
+        ctx.fillStyle = '#38C7FC';
         ctx.arc(this.x, this.y, this.radius, Math.PI * 2, false);
         ctx.fill();
     }
