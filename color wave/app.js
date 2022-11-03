@@ -77,6 +77,7 @@ class App {
 
         window.requestAnimationFrame(this.animate.bind(this));
 
+
     }
 }
 
