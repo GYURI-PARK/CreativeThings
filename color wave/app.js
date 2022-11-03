@@ -26,7 +26,12 @@ class App {
         this.image.onload = () => {
             this.isLoaded = true;
             this.drawImage();
-        }
+        };
+
+        window.requestAnimationFrame(this.animate.bind(this));
+
+        this.canvas.addEventListener('click', this.onClick.bind(this), false);
+
     }
 
     resize() {
@@ -74,11 +79,30 @@ class App {
             this.imgPos.x, this.imgPos.y,
             this.imgPos.width, this.imgPos.height,
         );
+    }
 
+    animate() {
         window.requestAnimationFrame(this.animate.bind(this));
 
+        this.ripple.animate(this.ctx);
 
     }
+
+    onClick(e) {
+        this.ctx.clearRect(0, 0, this.stageWidth, this.stageHeight);
+
+        this.ctx.drawImage(
+            this.image,
+            0, 0,
+            this.image.width, this.image.height,
+            this.imgPos.x, this.imgPos.y,
+            this.imgPos.width, this.imgPos.height,
+        );
+
+        this.ripple.start(e.offsetX, e.offsetY);
+    }
+
+
 }
 
 window.onload = () => {
