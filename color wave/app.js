@@ -31,7 +31,7 @@ class App {
         };
 
         this.image = new Image();
-        this.image.src = './sunflowers.jpg';
+        this.image.src = './starrynights.jpeg';
         this.image.onload = () => {
             this.isLoaded = true;
             this.drawImage();
