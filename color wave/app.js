@@ -118,6 +118,21 @@ class App {
             for (let j = 0; j < this.columns; j++){
                 const x = (j + 0.5) * this.pixelSize;
                 const pixelX = Math.max(Math.min(x, this.stageWidth), 0);
+
+                const pixelIndex = (pixelX + pixelY * this.stageWidth) * 4;
+                const red = this.imgData.data[pixelIndex + 0];
+                const green = this.imgData.data[pixelIndex + 1];
+                const blue = this.imgData.data[pixelIndex + 2];
+
+                const dot = new Dot(
+                    x,y,
+                    this.radius,
+                    this.pixelSize,
+                    red, green, blue,
+                );
+
+                this.dots.push(dot);
+
             }
         }
     }
