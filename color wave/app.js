@@ -91,11 +91,35 @@ class App {
             this.imgPos.width, this.imgPos.height,
         );
 
+        this.tmpCtx.drawImage(
+            this.image,
+            0, 0,
+            this.image.width, this.image.height,
+            this.imgPos.x, this.imgPos.y,
+            this.imgPos.width, this.imgPos.height,
+        );
+
+        this.imgData = this.tmpCtx.getImageData(0,0,this.stageWidth, this.stageHeight);
+
+
         this.drawDots();
     }
 
     drawDots() {
         this.dots = [];
+
+        this.columns = Math.ceil(this.stageWidth / this.pixelSize);
+        this.rows = Math.ceil(this.stageHeight / this.pixelSize);
+
+        for (let i =0; i < this.rows; i++) {
+            const y = (i + 0.5) * this.pixelSize;
+            const pixelY = Math.max(Math.min(y, this.stageHeight), 0);
+
+            for (let j = 0; j < this.columns; j++){
+                const x = (j + 0.5) * this.pixelSize;
+                const pixelX = Math.max(Math.min(x, this.stageWidth), 0);
+            }
+        }
     }
 
     animate() {
