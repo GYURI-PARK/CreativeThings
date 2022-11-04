@@ -5,6 +5,10 @@ export class Dot {
         this.x = x;
         this.y = y;
         this.radius = radius;
+        // const ratio = radius / 256 / 2;
+        // this.targetRadius = ratio * scale;
+        // this.radius = 0;
+        // this.radiusV = 0;
         this.pixelSize = pixelSize;
         this.pixelSizeHalf = pixelSize / 2;
         this.red = red;
@@ -21,6 +25,11 @@ export class Dot {
             this.pixelSize, this.pixelSize
         );
 
+        // const accel = (this.targetRadius - this.radius) / 2;
+        // this.radiusV += accel;
+        // this.radiusV *= BOUNCE;
+        // this.radius += this.radiusV;
+
         ctx.beginPath();
         ctx.fillStyle = 'rgb(${this.red}, ${this.green}, ${this.blue})';
         ctx.arc(this.x, this.y, this.radius, 0, PI2, false);
@@ -28,6 +37,8 @@ export class Dot {
     }
 
     reset() {
+        // this.radius = 0;
+        // this.radiusV = 0;
 
     }
 }

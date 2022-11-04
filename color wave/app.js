@@ -20,7 +20,7 @@ class App {
 
         this.radius = 10;
         this.pixelSize = 30;
-        this.dots = []
+        this.dots = [];
 
         this.isLoaded = false;
         this.imgPos = {
@@ -102,7 +102,6 @@ class App {
 
         this.imgData = this.tmpCtx.getImageData(0,0,this.stageWidth, this.stageHeight);
 
-
         this.drawDots();
     }
 
@@ -112,7 +111,7 @@ class App {
         this.columns = Math.ceil(this.stageWidth / this.pixelSize);
         this.rows = Math.ceil(this.stageHeight / this.pixelSize);
 
-        for (let i =0; i < this.rows; i++) {
+        for (let i = 0; i < this.rows; i++) {
             const y = (i + 0.5) * this.pixelSize;
             const pixelY = Math.max(Math.min(y, this.stageHeight), 0);
 
@@ -124,6 +123,8 @@ class App {
                 const red = this.imgData.data[pixelIndex + 0];
                 const green = this.imgData.data[pixelIndex + 1];
                 const blue = this.imgData.data[pixelIndex + 2];
+                // const scale = getBWValue(red, green, blue, false);
+
 
                 const dot = new Dot(
                     x,y,
@@ -131,7 +132,8 @@ class App {
                     this.pixelSize,
                     red, green, blue,
                 );
-
+                
+                
                 this.dots.push(dot);
 
             }
@@ -159,6 +161,10 @@ class App {
 
     onClick(e) {
         this.ctx.clearRect(0, 0, this.stageWidth, this.stageHeight);
+
+        // for (let i = 0; i < this.dots.length; i++) {
+        //     this.dots[i].reset();
+        // }
 
         this.ctx.drawImage(
             this.image,
