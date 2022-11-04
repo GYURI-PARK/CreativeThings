@@ -31,7 +31,7 @@ export class Dot {
         // this.radius += this.radiusV;
 
         ctx.beginPath();
-        ctx.fillStyle = 'rgb(${this.red}, ${this.green}, ${this.blue})';
+        ctx.fillStyle = `rgb(${this.red}, ${this.green}, ${this.blue})`;
         ctx.arc(this.x, this.y, this.radius, 0, PI2, false);
         ctx.fill();
     }
