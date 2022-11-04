@@ -21,15 +21,21 @@ export class Ripple {
         this.maxRadius = this.getMax(x,y);
     }
 
-    animate(ctx) {
+    // animate(ctx) {
+    //     if (this.radius < this.maxRadius) {
+    //         this.radius += this.speed;
+    //     }
+
+    //     ctx.beginPath();
+    //     ctx.fillStyle = '#38C7FC';
+    //     ctx.arc(this.x, this.y, this.radius, Math.PI * 2, false);
+    //     ctx.fill();
+    // }
+
+    animate() {
         if (this.radius < this.maxRadius) {
             this.radius += this.speed;
         }
-
-        ctx.beginPath();
-        ctx.fillStyle = '#38C7FC';
-        ctx.arc(this.x, this.y, this.radius, Math.PI * 2, false);
-        ctx.fill();
     }
 
     getMax(x, y) {
