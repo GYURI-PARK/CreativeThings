@@ -20,6 +20,7 @@
 </br>
 
 ### 2. Color Waves
+<img src="https://user-images.githubusercontent.com/93391058/200107642-776d1f31-970f-4e3a-97f1-f862fa0e0e94.gif" width="50%">
 
 
 > ##### 1. 이미지로부터 color 추출하기
