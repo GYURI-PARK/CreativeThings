@@ -143,7 +143,6 @@ class App {
     animate() {
         window.requestAnimationFrame(this.animate.bind(this));
 
-        // this.ripple.animate(this.ctx);
         this.ripple.animate();
 
         for (let i =0; i < this.dots.length; i++) {
@@ -161,10 +160,6 @@ class App {
 
     onClick(e) {
         this.ctx.clearRect(0, 0, this.stageWidth, this.stageHeight);
-
-        // for (let i = 0; i < this.dots.length; i++) {
-        //     this.dots[i].reset();
-        // }
 
         this.ctx.drawImage(
             this.image,
