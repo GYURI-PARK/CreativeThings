@@ -22,6 +22,34 @@ export class Dialog {
         this.rotation = 0;
         this.sideValue = 0;
         this.isDown = false;
-        
+    }
+
+    resize(stageWidth, stageHeight) {
+        this.pos.x = Math.random() * (stageWidth - WIDTH);
+        this.pos.y = Math.random() * (stageHeight - HEIGHT);
+        this.target = this.pos.clone();
+        this.prevPos = this.pos.clone();
+    }
+
+    animate(ctx) {
+        ctx.beginPath();
+        ctx.fillStyle = '#f4e55a';
+        ctx.fillRect(this.pos.x, this.pos.y, WIDTH, HEIGHT);
+    }
+
+    down(point){
+        if (point.collide(this.pos, WIDTH, HEIGHT)) {
+            return this;
+        } else {
+            return null;
+        }
+    }
+
+    move(point){
+
+    }
+
+    up() {
+
     }
 }
