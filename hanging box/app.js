@@ -27,3 +27,7 @@ class App {
         this.ctx.clearRect(0,0, this.stageWidth, this.stageHeight);
     }
 }
+
+window.onload = () => {
+    new App();
+};
