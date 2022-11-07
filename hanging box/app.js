@@ -52,11 +52,19 @@ class App {
         window.requestAnimationFrame(this.animate.bind(this));
 
         this.ctx.clearRect(0,0, this.stageWidth, this.stageHeight);
+
+        for (let i = 0; i < this.items.length; i++) {
+            this.items[i].animate(this.ctx);
+        } 
     }
 
     onDown(e) {
         this.mousePos.x = e.clientX;
         this.mousePos.y = e.clientY;
+
+        for (let i = this.items.length-1; i >= 0; i--) {
+            const item = this.items[i].down(this.mousePos.clone());
+        }
     }
 
     onMove(e) {

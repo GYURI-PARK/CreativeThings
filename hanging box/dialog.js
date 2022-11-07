@@ -33,7 +33,7 @@ export class Dialog {
 
     animate(ctx) {
         ctx.beginPath();
-        ctx.fillStyle = '#f4e55a';
+        ctx.fillStyle = '#c8c8c8';
         ctx.fillRect(this.pos.x, this.pos.y, WIDTH, HEIGHT);
     }
 
