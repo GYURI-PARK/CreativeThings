@@ -35,6 +35,18 @@ class App {
 
         this.ctx.clearRect(0,0, this.stageWidth, this.stageHeight);
     }
+
+    onDown(e) {
+
+    }
+
+    onMove(e) {
+
+    }
+
+    onUp(e) {
+        
+    }
 }
 
 window.onload = () => {
