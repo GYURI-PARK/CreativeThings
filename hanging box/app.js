@@ -1,4 +1,5 @@
 import {Point} from './point.js';
+import {Dialog} from './dialog.js';
 
 class App {
     constructor() {
@@ -10,6 +11,12 @@ class App {
 
         this.mousePos = new Point();
         this.curItem = null;
+
+        this.items = [];
+        this.total = 1;
+        for (let i = 0; i < this.total; i++) {
+            this.items[i] = new Dialog();
+        }
         
         window.addEventListener('resize', this.resize.bind(this), false);
         this.resize();
@@ -28,6 +35,17 @@ class App {
         this.canvas.width = this.stageWidth * this.pixelRatio;
         this.canvas.height = this.stageHeight * this.pixelRatio;
         this.ctx.scale(this.pixelRatio, this.pixelRatio);
+
+        this.ctx.shadowOffsetX = 0;
+        this.ctx.shadowOffsetY = 3;
+        this.ctx.shadowBlur = 6;
+        this.ctx.shadowColor = `rgba(0,0,0,0.1)`;
+
+        this.ctx.lineWidth = 2;
+
+        for(let i = 0; i<this.items.length; i++){
+            this.items[i].resize(this.stageWidth, this.stageHeight);
+        }
     }
 
     animate() {
