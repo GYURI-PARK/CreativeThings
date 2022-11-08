@@ -34,10 +34,14 @@ export class Dialog {
     animate(ctx) {
         const move = this.target.clone().subtract(this.pos).reduce(FOLLOW_SPEED);
         this.pos.add(move);
+        // 마우스에 따라 사각형 움직임
+
+        this.centerPos = this.pos.clone().add(this.mousePos);
 
         ctx.beginPath();
         ctx.fillStyle = '#f4255a';
         ctx.fillRect(this.pos.x, this.pos.y, WIDTH, HEIGHT);
+        // 사각형 등장
     }
 
     down(point){
