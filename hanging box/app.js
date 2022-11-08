@@ -62,8 +62,14 @@ class App {
             this.ctx.strokeStyle = '#c8c8c8';
 
             this.ctx.beginPath();
+            this.ctx.arc(this.mousePos.x, this.mousePos.y, 8, 0, Math.PI * 2);
+            this.ctx.fill();
+            // mouse 위치에 point 표시
+
+            this.ctx.beginPath();
             this.ctx.arc(this.curItem.centerPos.x, this.curItem.centerPos.y, 8, 0, Math.PI * 2);
             this.ctx.fill();
+            // click 위치에 point 표시
         }
     }
 
