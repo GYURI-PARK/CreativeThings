@@ -64,6 +64,12 @@ class App {
 
         for (let i = this.items.length-1; i >= 0; i--) {
             const item = this.items[i].down(this.mousePos.clone());
+            if (item) {
+                this.curItem = item;
+                const index = this.items.indexOf(item);
+                this.items.push(this.items.splice(index, 1)[0]);
+                break;
+            }
         }
     }
 

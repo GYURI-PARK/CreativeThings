@@ -43,7 +43,6 @@ export class Dialog {
             this.startPos = this.pos.clone();
             this.downPos = point.clone();
             this.mousePos = point.clone().subtract(this.pos);
-
             return this;
         } else {
             return null;
