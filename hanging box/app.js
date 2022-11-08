@@ -76,6 +76,10 @@ class App {
     onMove(e) {
         this.mousePos.x = e.clientX;
         this.mousePos.y = e.clientY;
+
+        for (let i = 0; i < this.items.length; i++){
+            this.items[i].move(this.mousePos.clone());
+        }
     }
 
     onUp(e) {
