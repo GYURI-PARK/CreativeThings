@@ -44,12 +44,24 @@ export class Dialog {
         // 사각형 등장
     }
 
+    swingDrug(ctx) {
+
+    }
+
     down(point){
         if (point.collide(this.pos, WIDTH, HEIGHT)) {
             this.isDown = true;
             this.startPos = this.pos.clone();
             this.downPos = point.clone();
             this.mousePos = point.clone().subtract(this.pos);
+
+            const xRatioValue = this.mousePos.x / WIDTH;
+            this.origin.x = WIDTH * xRatioValue;
+            this.origin.y = HEIGHT * this.mousePos.y / HEIGHT;
+
+            this.sideValue = xRatioValue - 0.5;
+
+
             return this;
         } else {
             return null;
