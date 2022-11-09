@@ -38,14 +38,34 @@ export class Dialog {
 
         this.centerPos = this.pos.clone().add(this.mousePos);
 
-        ctx.beginPath();
-        ctx.fillStyle = '#f4255a';
-        ctx.fillRect(this.pos.x, this.pos.y, WIDTH, HEIGHT);
-        // 사각형 등장
+        // ctx.beginPath();
+        // ctx.fillStyle = '#f4255a';
+        // ctx.fillRect(this.pos.x, this.pos.y, WIDTH, HEIGHT);
+        // // 사각형 등장
+
+        this.swingDrug(ctx);
+
+        this.prevPos = this.pos.clone();
     }
 
     swingDrug(ctx) {
+        const dx = this.pos.x - this.prevPos.x;
+        const speedX = Math.abs(dx) / FPS;
+        const speed = Math.min(Math.max(speedX, 0), 1);
 
+        let rotation = (MAX_ANGLE / 1) * speed;
+        rotation = rotation * (dx > 0 ? 1 : -1) - this.sideValue;
+
+        this.rotation += (rotation - this.rotation) * ROTATE_SPEED;
+
+        const tmpPos = this.pos.clone().add(this.origin);
+        ctx.save();
+        ctx.translate(tmpPos.x, tmpPos.y);
+        ctx.rotate(this.rotation * Math.PI / 180);
+        ctx.beginPath();
+        ctx.fillStyle = '#f4e55a';
+        ctx.fillRect(-this.origin.x, -this.origin.y, WIDTH, HEIGHT);
+        ctx.restore();
     }
 
     down(point){
