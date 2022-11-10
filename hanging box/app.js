@@ -13,7 +13,7 @@ class App {
         this.curItem = null;
 
         this.items = [];
-        this.total = 1;
+        this.total = 7;
         for (let i = 0; i < this.total; i++) {
             this.items[i] = new Dialog();
         }
@@ -58,8 +58,8 @@ class App {
         } 
 
         if (this.curItem) {
-            this.ctx.fillStyle = '#c8c8c8';
-            this.ctx.strokeStyle = '#c8c8c8';
+            this.ctx.fillStyle = '#5283F9';
+            this.ctx.strokeStyle = '#5283F9';
 
             this.ctx.beginPath();
             this.ctx.arc(this.mousePos.x, this.mousePos.y, 8, 0, Math.PI * 2);
