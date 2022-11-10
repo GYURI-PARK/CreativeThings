@@ -1,3 +1,5 @@
+import { GlowPraticle } from "./glowparticle";
+
 const COLORS = [
     {r: 45, g: 74, b: 227},
     {r: 250, g: 255, b: 89},
@@ -42,7 +44,13 @@ class App {
         this.particles = [];
 
         for(let i = 0; i < this.totalParticles; i++) {
-            
+            const item = new GlowPraticle(
+            Math.random() * this.stageWidth,
+            Math.random() * this.stageHeight,
+            Math.random() * 
+            (this.maxRadius - this.minRadius) + this.minRadius,
+            COLORS[curColor]
+            );
         }
 
     }
