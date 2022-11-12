@@ -51,6 +51,12 @@ class App {
             (this.maxRadius - this.minRadius) + this.minRadius,
             COLORS[curColor]
             );
+
+            if(++curColor >= COLORS.length) {
+                curColor = 0;
+            }
+
+            this.particles[i] = item;
         }
 
     }
