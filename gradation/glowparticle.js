@@ -1,6 +1,6 @@
 const PI2 = Math.PI * 2;
 
-export class GlowPraticle {
+export class GlowParticle {
     constructor(x, y, radius, rgb) {
         this.x = x;
         this.y = y;

@@ -1,4 +1,4 @@
-import { GlowPraticle } from "./glowparticle";
+import { GlowParticle } from "./glowparticle.js";
 
 const COLORS = [
     {r: 45, g: 74, b: 227},
@@ -44,7 +44,7 @@ class App {
         this.particles = [];
 
         for(let i = 0; i < this.totalParticles; i++) {
-            const item = new GlowPraticle(
+            const item = new GlowParticle(
             Math.random() * this.stageWidth,
             Math.random() * this.stageHeight,
             Math.random() * 
