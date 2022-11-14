@@ -38,7 +38,7 @@
 </br>
 
 ### 4. Color gradation
-<img src="https://user-images.githubusercontent.com/93391058/200107642-776d1f31-970f-4e3a-97f1-f862fa0e0e94.gif" width="50%">
+<img src="https://user-images.githubusercontent.com/93391058/201607031-bc02aec1-eb2b-43c6-a9d6-56d3bfe9706c.gif" width="50%">
 
 
 > ##### 1. 이미지로부터 color 추출하기
