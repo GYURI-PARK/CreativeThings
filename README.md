@@ -32,15 +32,12 @@
 <img src="https://user-images.githubusercontent.com/93391058/201605557-bec9cdec-4619-4dde-9b08-266d5031f0a0.gif" width="50%">
 
 
-> ##### 1. 이미지로부터 color 추출하기
-> ##### 2. 이미지 픽셀 단위로 나누기
-> ##### 3. 물결 효과 나타내기
+> ##### 1. 마우스 클릭 위치 + 움직인 위치 표시
+> ##### 2. 도형 원하는 개수만큼 표시하기 
+> ##### 3. 마우스로 도형 움직이기
 </br>
 
 ### 4. Color gradation
 <img src="https://user-images.githubusercontent.com/93391058/201607031-bc02aec1-eb2b-43c6-a9d6-56d3bfe9706c.gif" width="50%">
 
-
-> ##### 1. 이미지로부터 color 추출하기
-> ##### 2. 이미지 픽셀 단위로 나누기
-> ##### 3. 물결 효과 나타내기
+</br>
