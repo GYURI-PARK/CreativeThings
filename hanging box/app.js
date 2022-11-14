@@ -58,8 +58,8 @@ class App {
         } 
 
         if (this.curItem) {
-            this.ctx.fillStyle = '#01E8BA';
-            this.ctx.strokeStyle = '#01E8BA';
+            this.ctx.fillStyle = '#FF0080';
+            this.ctx.strokeStyle = '#FF0080';
 
             this.ctx.beginPath();
             this.ctx.arc(this.mousePos.x, this.mousePos.y, 8, 0, Math.PI * 2);
