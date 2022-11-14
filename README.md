@@ -29,7 +29,7 @@
 </br>
 
 ### 3. hanging box
-<img src="https://user-images.githubusercontent.com/93391058/200107642-776d1f31-970f-4e3a-97f1-f862fa0e0e94.gif" width="50%">
+<img src="https://user-images.githubusercontent.com/93391058/201604368-a8f60081-f44c-46d9-a582-bb1e75f53e62.gif" width="50%">
 
 
 > ##### 1. 이미지로부터 color 추출하기
