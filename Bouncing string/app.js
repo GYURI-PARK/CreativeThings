@@ -6,6 +6,11 @@ class App {
 
         this.pixelRatio = window.devicePixelRatio > 1 ? 2 : 1;
 
+        this.strings = [];
+        this.moveX = -5000;
+        this.moveY = -5000;
+        this.isDown = false;
+
         window.addEventListener('resize', this.resize.bind(this), false);
         this.resize();
 
@@ -29,6 +34,18 @@ class App {
         window.requestAnimationFrame(this.animate.bind(this));
 
         this.ctx.clearRect(0,0, this.stageWidth, this.stageHeight);
+    }
+
+    onDown(e) {
+
+    }
+
+    onMove(e) {
+
+    }
+
+    onUp(e) {
+
     }
 }
 
