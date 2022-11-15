@@ -1,6 +1,9 @@
 export class BounceString {
     constructor(pos, color) {
         
+        const middleX = ((pos.x2 - pos.x1) / 2) + pos.x1;
+        const middleY = ((pos.y2 - pos.y1) / 2) + pos.y1;
+
         this.points = [
             {
                 x: pos.x1,
@@ -11,10 +14,10 @@ export class BounceString {
                 vy: 0,
             },
             {
-                x: ((pos.x2 - pos.x1) / 2) + pos.x1,
-                y: ((pos.y2 - pos.y1) / 2) + pos.y1,
-                ox: pos.x1,
-                oy: pos.y1,
+                x: middleX,
+                y: middleY,
+                ox: middleX,
+                oy: middleY,
                 vx: 0,
                 vy: 0,
             },
@@ -27,5 +30,9 @@ export class BounceString {
                 vy: 0,
             },
         ];
+
+        this.detect = 10;
+
+        this.color = color;
     }
 }
