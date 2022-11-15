@@ -9,6 +9,10 @@ class App {
         window.addEventListener('resize', this.resize.bind(this), false);
         this.resize();
 
+        document.addEventListener('pointerdown', this.onDown.bind(this), false);
+        document.addEventListener('pointermove', this.onMove.bind(this), false);
+        document.addEventListener('pointerup', this.onUp.bind(this), false);
+
         window.requestAnimationFrame(this.animate.bind(this));
     }
 
