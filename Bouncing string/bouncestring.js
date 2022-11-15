@@ -35,4 +35,13 @@ export class BounceString {
 
         this.color = color;
     }
+
+    animate(ctx, moveX, moveY) {
+
+        ctx.beginPath();
+        ctx.fillStyle = '#ff00ff';
+        ctx.arc(moveX, moveY, 20, 0, Math*PI*2, false);
+        ctx.fill();
+        
+    }
 }
