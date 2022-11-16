@@ -37,7 +37,9 @@ class App {
     }
 
     onDown(e) {
-
+        this.isDown = true;
+        this.moveX = e.clientX;
+        this.moveY = e.clientY;
     }
 
     onMove(e) {
