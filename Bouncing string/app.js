@@ -28,6 +28,10 @@ class App {
         this.canvas.width = this.stageWidth * this.pixelRatio;
         this.canvas.height = this.stageHeight * this.pixelRatio;
         this.ctx.sclae(this.pixelRatio, this.pixelRatio);
+
+        this.strings = [
+            
+        ]
     }
 
     animate() {
