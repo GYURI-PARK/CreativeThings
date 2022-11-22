@@ -43,10 +43,18 @@ class App {
     }
 
     onMove(e) {
+        if (this.isDown) {
+            this.moveX = e.clientX;
+            this.moveY = e.clientY;
+        }
 
     }
 
     onUp(e) {
+        this.isDown = false;
+
+        this.moveX = -5000;
+        this.moveY = -5000;
 
     }
 }
