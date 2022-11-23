@@ -1,3 +1,5 @@
+import { lineCircle } from "./utils";
+
 const BOUNCE = 0.92;
 
 export class BounceString {
@@ -44,6 +46,34 @@ export class BounceString {
         ctx.fillStyle = '#ff00ff';
         ctx.arc(moveX, moveY, 20, 0, Math.PI*2, false);
         ctx.fill();
+
+        ctx.beginPath();
+        ctx.strokeStyle = this.color;
+        ctx.lineWidth = 4;
+
+        if (lineCircle(
+            this.points[0].x,
+            this.points[0].y,
+            this.points[2].x,
+            this.points[2].y,
+            moveX,
+            moveY,
+            this.detect,
+        )) {
+            this.detect = 300;
+            let tx = (this.points[1].ox + moveX) / 2;
+            let ty = moveY;
+            this.points[1].vx = tx - this.points[1].x;
+            this.points[1].vy = ty - this.points[1].y;
+        } else {
+            this.detect = 10;
+            let tx = this.points[1].ox;
+            let ty = this.points[1].oy;
+            this.points[1].vx += tx - this.points[1].x;
+            this.points[1].vx *= BOUNCE;
+            this.points[1].vy += ty - this.points[1].y;
+            this.points[1].vy *= BOUNCE;
+        }
         
     }
 }
