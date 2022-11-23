@@ -1,3 +1,5 @@
+const BOUNCE = 0.92;
+
 export class BounceString {
     constructor(pos, color) {
         
