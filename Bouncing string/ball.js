@@ -9,7 +9,13 @@ export class Ball {
         this.y = stageHeight / 2;
     }
 
-    animate() {
-        
+    animate(ctx, stageWidth, stageHeight) {
+        this.x += this.vx;
+        this.y += this.vy;
+
+        const minX = this.radius;
+        const maxX = stageWidth - this.radius;
+        const minY = this.radius;
+        const maxY = stageHeight - this.radius;
     }
 }
