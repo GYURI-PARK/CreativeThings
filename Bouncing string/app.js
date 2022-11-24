@@ -37,18 +37,20 @@ class App {
         const x2 = this.stageWidth - xGap;
         const total = Math.floor((this.stageHeight - yGap) / yGap);
 
+        this.strings = [];
 
-        this.strings = [
-            new BounceString(
+        for (let i = 0; i < total; i++) {
+            this.strings[i] = new BounceString(
                 {
-                    x1: 50,
-                    y1: this.stageHeight / 2,
-                    x2: this.stageWidth - 50,
-                    y2: this.stageHeight / 2
+                    x1: x1,
+                    y1: i * yGap + yGap,
+                    x2: x2,
+                    y2: i * yGap + yGap,
                 },
                 '#ff5038'
             )
-        ]
+        }
+        
     }
 
     animate() {
