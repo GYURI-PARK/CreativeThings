@@ -75,5 +75,7 @@ export class BounceString {
             this.points[1].vy *= BOUNCE;
         }
         
+        this.points[1].x += this.points[1].vx;
+        this.points[1].y += this.points[1].vy;
     }
 }
