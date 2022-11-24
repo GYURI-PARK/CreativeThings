@@ -31,6 +31,13 @@ class App {
         this.canvas.height = this.stageHeight * this.pixelRatio;
         this.ctx.scale(this.pixelRatio, this.pixelRatio);
 
+        const xGap = 20;
+        const yGap = 20;
+        const x1 = xGap;
+        const x2 = this.stageWidth - xGap;
+        const total = Math.floor((this.stageHeight - yGap) / yGap);
+
+
         this.strings = [
             new BounceString(
                 {

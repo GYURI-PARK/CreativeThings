@@ -44,7 +44,7 @@ export class BounceString {
 
         ctx.beginPath();
         ctx.fillStyle = '#ff00ff';
-        ctx.arc(moveX, moveY, 20, 0, Math.PI*2, false);
+        ctx.arc(moveX, moveY, 60, 0, Math.PI*2, false);
         ctx.fill();
 
         ctx.beginPath();
@@ -83,7 +83,7 @@ export class BounceString {
 
         ctx.moveTo(prevX, prevY);
 
-        for (let i = 0; i < this.points.length; i++) {
+        for (let i = 1; i < this.points.length; i++) {
             const cx = (prevX + this.points[i].x) / 2;
             const cy = (prevY + this.points[i].y) / 2;
 
