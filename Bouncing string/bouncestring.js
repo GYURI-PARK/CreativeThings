@@ -1,4 +1,4 @@
-import { lineCircle } from "./utils";
+import { lineCircle } from "./utils.js";
 
 const BOUNCE = 0.92;
 
@@ -77,6 +77,9 @@ export class BounceString {
         
         this.points[1].x += this.points[1].vx;
         this.points[1].y += this.points[1].vy;
+
+        let prevX = this.points[0].x;
+        let prevY = this.points[0].y;
 
         ctx.moveTo(prevX, prevY);
 
