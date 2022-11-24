@@ -84,7 +84,7 @@ export class BounceString {
             const cx = (prevX + this.points[i].x) / 2;
             const cy = (prevY + this.points[i].y) / 2;
 
-            ctx.qudraticCurveTo();
+            ctx.qudraticCurveTo(prevX, prevY, cx, cy);
         }
     }
 }
