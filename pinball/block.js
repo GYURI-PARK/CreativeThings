@@ -7,4 +7,14 @@ export class Block {
         this.maxX = width + x;
         this.maxY = height + y;
     }
+
+    draw(ctx) {
+        const xGap = 80;
+        const yGap = 60;
+
+        ctx.fillStyle = '#ff384e';
+        ctx.beginPath();
+        ctx.rect(this.x, this.y, this.width, this.height);
+        ctx.fill();
+    }
 }
