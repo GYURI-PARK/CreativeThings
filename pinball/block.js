@@ -27,6 +27,8 @@ export class Block {
         ctx.fill();
 
         ctx.fillStyle = '#9d0919';
-
-    }
+        ctx.beginPath();
+        ctx.moveTo(this.x, this.y);
+        ctx.lineTo(this.x, this.maxY);
+    }   
 }
