@@ -13,4 +13,11 @@ export class Ball {
         this.x += this.vx;
         this.y += this.vy;
     }
+
+    bounceWindow(stageWidth, stageHeight) {
+        const minX = this.radius;
+        const maxX = stageWidth - this.radius;
+        const minY = this.radius;
+        const maxY = stageHeight - this.radius;
+    }
 }
