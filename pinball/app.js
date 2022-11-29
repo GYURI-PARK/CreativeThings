@@ -13,7 +13,7 @@ class App {
         this.resize();
 
         this.ball = new Ball(this.stageWidth, this.stageHeight, 60, 15);
-        
+
         window.requestAnimationFrame(this.animate.bind(this));
     }
 
@@ -28,6 +28,8 @@ class App {
 
     animate(t) {
         window.requestAnimationFrame(this.animate.bind(this));
+
+        this.ball.draw(this.ctx, this.stageWidth, this.stageHeight)
     }
 }
 
