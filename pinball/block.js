@@ -30,5 +30,8 @@ export class Block {
         ctx.beginPath();
         ctx.moveTo(this.x, this.y);
         ctx.lineTo(this.x, this.maxY);
+        ctx.lineTo(this.x - xGap, this.maxY + yGap);
+        ctx.lineTo(this.x - xGap, this.maxy + yGap - this.height);
+        ctx.fill();
     }   
 }
