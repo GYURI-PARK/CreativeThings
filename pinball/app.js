@@ -30,6 +30,7 @@ class App {
         window.requestAnimationFrame(this.animate.bind(this));
 
         this.ctx.clearRect(0,0, this.stageWidth, this.stageHeight);
+        // 공이 움직이는 게 아니라 지나온 흔적을 지운 것
 
         this.ball.draw(this.ctx, this.stageWidth, this.stageHeight)
     }
