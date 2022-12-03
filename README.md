@@ -54,4 +54,9 @@
 
 
 ### 6. Pinball
+<img src="https://user-images.githubusercontent.com/93391058/203931510-ce397b57-da57-4ca3-b01a-1e972a034789.gif" width="50%">
+
+
+> ##### 1. HTML canvas quadraticCurveTo 함수 
+</br>
 
