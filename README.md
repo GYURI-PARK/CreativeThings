@@ -57,6 +57,7 @@
 <img src="https://user-images.githubusercontent.com/93391058/203931510-ce397b57-da57-4ca3-b01a-1e972a034789.gif" width="50%">
 
 
-> ##### 1. HTML canvas quadraticCurveTo 함수 
+> ##### 1. canvas 위에 공의 움직임 나타내기
+> ##### 2. 측면에 닿게 되면 공의 운동 방향을 바꾸어 튕겨 나가는 것처럼 표현
 </br>
 
