@@ -11,8 +11,8 @@ export class Polygon {
 
     animate(ctx, moveX) {
         ctx.save();
-        ctx.fillStyle = '#00000';
-        ctx.beginPath();
+        ctx.fillStyle = '#ff384e';
+        // ctx.beginPath();
 
         const angle = PI2 / this.sides;
 
@@ -25,11 +25,14 @@ export class Polygon {
             const x = this.radius * Math.cos(angle * i);
             const y = this.radius * Math.sin(angle * i);
 
-            (i == 0) ? ctx.moveTo(x,y) : ctx.lineTo(x,y);
+            //(i == 0) ? ctx.moveTo(x,y) : ctx.lineTo(x,y);
+            ctx.beginPath();
+            ctx.arc(x, y, 30, 0, PI2, false);
+            ctx.fill();
         }
 
-        ctx.fill();
-        ctx.closePath();
+        // ctx.fill();
+        // ctx.closePath();
         ctx.restore();
 
     }
