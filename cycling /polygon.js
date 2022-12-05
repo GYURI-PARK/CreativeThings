@@ -17,6 +17,15 @@ export class Polygon {
         const angle = PI2 / this.sides;
 
         ctx.translate(this.x, this.y);
-        
+
+        for (let i = 0; i < this.sides; i++) {
+            const x = this.radius * Math.cos(angle * i);
+            const y = this.radius * Math.sin(angle * i);
+
+            (i == 0) ? ctx.moveTo(x,y) : ctx.lineTo(x,y);
+        }
+
+        ctx.fill();
+
     }
 }
