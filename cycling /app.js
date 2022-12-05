@@ -44,7 +44,9 @@ class App {
 
         this.ctx.clearRect(0, 0, this.stageWidth, this.stageHeight);
 
-        this.polygon.animate(this.ctx);
+        this.moveX *= 0.92;
+
+        this.polygon.animate(this.ctx, this.moveX);
     }
 
     onDown(e) {
