@@ -8,4 +8,15 @@ export class Polygon {
         this.sides = sides;
         this.rotate = 0;
     }
+
+    animate(ctx) {
+        ctx.save();
+        ctx.fillStyle = '#000';
+        ctx.beginPath();
+
+        const angle = PI2 / this.sides;
+
+        ctx.translate(this.x, this.y);
+        
+    }
 }
