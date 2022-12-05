@@ -22,6 +22,12 @@ class App {
         this.canvas.height = this.stageHeight * this.pixelRatio;
         this.ctx.scale(this.pixelRatio, this.pixelRatio);
         
+        this.polygon = new Polygon (
+            this.stageWidth / 2,
+            this.stageHeight / 2,
+            this.stageHeigth / 3,
+            3
+        );
     }
 
     animate() {
