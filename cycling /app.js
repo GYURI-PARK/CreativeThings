@@ -26,14 +26,17 @@ class App {
             this.stageWidth / 2,
             this.stageHeight / 2,
             this.stageHeigth / 3,
-            3
+            3 
+            // 3 : 삼각형, 5 : 오각형
         );
     }
 
     animate() {
         window.requestAnimationFrame(this.animate.bind(this));
 
-        this.ctx.clearRect(0,0,this.stageWidth, this.stageHeight);
+        this.ctx.clearRect(0, 0, this.stageWidth, this.stageHeight);
+
+        this.polygon.animate(this.ctx);
     }
 }
 

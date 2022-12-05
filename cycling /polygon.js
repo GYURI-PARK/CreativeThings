@@ -11,7 +11,7 @@ export class Polygon {
 
     animate(ctx) {
         ctx.save();
-        ctx.fillStyle = '#000';
+        ctx.fillStyle = '#00000';
         ctx.beginPath();
 
         const angle = PI2 / this.sides;
