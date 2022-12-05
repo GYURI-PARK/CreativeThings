@@ -32,9 +32,9 @@ class App {
         
         this.polygon = new Polygon(
             this.stageWidth / 2,
-            this.stageHeight / 2,
-            this.stageHeigth / 3.5,
-            12 
+            this.stageHeight + (this.stageHeight / 4),
+            this.stageHeigth / 1.5,
+            15
             // 3 : 삼각형, 5 : 오각형
         );
     }
