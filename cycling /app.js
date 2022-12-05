@@ -54,11 +54,15 @@ class App {
     }
 
     onMove(e) {
+        if (this.isDown) {
+            this.moveX = e.clientX - this.offsetX;
+            this.offsetX = e.clientX;
+        }
 
     }
 
     onUp(e) {
-
+        this.isDown = false;
     }
 }
 
