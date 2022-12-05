@@ -26,6 +26,8 @@ export class Polygon {
         }
 
         ctx.fill();
+        ctx.closePath();
+        ctx.restore();
 
     }
 }

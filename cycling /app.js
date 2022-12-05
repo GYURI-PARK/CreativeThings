@@ -1,3 +1,5 @@
+import {Polygon} from './polygon.js';
+
 class App {
     constructor() {
         this.canvas = document.createElement('canvas');
