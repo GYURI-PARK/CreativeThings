@@ -48,7 +48,9 @@ class App {
     }
 
     onDown(e) {
-
+        this.isDown = true;
+        this.moveX = 0;
+        this.offsetX = e.clientX;
     }
 
     onMove(e) {
@@ -56,7 +58,7 @@ class App {
     }
 
     onUp(e) {
-        
+
     }
 }
 
