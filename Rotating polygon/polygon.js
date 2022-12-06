@@ -32,7 +32,7 @@ export class Polygon {
         // ctx.beginPath();
 
         const angle = PI2 / this.sides;
-        // const angle2 = PI2 / 4;
+        const angle2 = PI2 / 4;
 
         ctx.translate(this.x, this.y);
 
@@ -43,24 +43,20 @@ export class Polygon {
             const x = this.radius * Math.cos(angle * i);
             const y = this.radius * Math.sin(angle * i);
 
-            // (i == 0) ? ctx.moveTo(x,y) : ctx.lineTo(x,y);
-            ctx.beginPath();
-            ctx.arc(x, y, 30, 0, PI2, false);
-            ctx.fill();
-            // ctx.save();
+            ctx.save();
             // ctx.fillStyle = COLORS[i];
-            // ctx.translate(x, y);
-            // ctx.rotate(((360 / this.sides) * i + 45) * Math.PI / 180);
-            // ctx.beginPath();
+            ctx.translate(x, y);
+            ctx.rotate(((360 / this.sides) * i + 45) * Math.PI / 180);
+            ctx.beginPath();
 
-            // for (let j = 0; j < 4; j++) {
-            //     const x2 = 160 * Math.cos(angle2 * j);
-            //     const y2 = 160 * Math.sin(angle2 * j);
-            //     (j == 0) ? ctx.moveTo(x2, y2) : ctx.lineTo(x2, y2);
-            // }
-            // ctx.fill();
-            // ctx.closePath();
-            // ctx.restore();
+            for (let j = 0; j < 4; j++) {
+                const x2 = 160 * Math.cos(angle2 * j);
+                const y2 = 160 * Math.sin(angle2 * j);
+                (j == 0) ? ctx.moveTo(x2, y2) : ctx.lineTo(x2, y2);
+            }
+            ctx.fill();
+            ctx.closePath();
+            ctx.restore();
         }
 
         // ctx.fill();
