@@ -27,7 +27,7 @@ export class Polygon {
     }
 
     animate(ctx, moveX) {
-        // ctx.save();
+        ctx.save();
         // ctx.fillStyle = '#ff384e';
         // ctx.beginPath();
 
@@ -36,7 +36,7 @@ export class Polygon {
 
         ctx.translate(this.x, this.y);
 
-        this.rotate -= moveX * 0.008;
+        this.rotate += moveX * 0.008;
         ctx.rotate(this.rotate);
 
         for (let i = 0; i < this.sides; i++) {
@@ -51,6 +51,7 @@ export class Polygon {
             ctx.fillStyle = COLORS[i];
             ctx.translate(x, y);
             ctx.rotate(((360 / this.sides) * i + 45) * Math.PI / 180);
+            ctx.beginPath();
 
             for (let j = 0; j < 4; j++) {
                 const x2 = 160 * Math.cos(angle2 * j);
