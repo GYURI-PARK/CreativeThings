@@ -66,5 +66,5 @@
 <img src="https://user-images.githubusercontent.com/93391058/206471581-a9f4f667-662a-4ab9-937b-08d90b825691.gif" width="50%">
 
 
-> ##### 1. canvas 위에 공의 움직임 나타내기
+> ##### 1. 도형의 위치와 각도를 이용해 회전하는 것처럼 표현하기
 
