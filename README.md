@@ -54,7 +54,7 @@
 
 
 ### 6. Pinball
-<img src="https://user-images.githubusercontent.com/93391058/203931510-ce397b57-da57-4ca3-b01a-1e972a034789.gif" width="50%">
+<img src="https://user-images.githubusercontent.com/93391058/206467694-d711504b-1696-4349-819c-62bc9240905a.gif" width="50%">
 
 
 > ##### 1. canvas 위에 공의 움직임 나타내기
