@@ -63,7 +63,7 @@
 
 
 ### 7. Rotating Polygon
-<img src="https://user-images.githubusercontent.com/93391058/203931510-ce397b57-da57-4ca3-b01a-1e972a034789.gif" width="50%">
+<img src="https://user-images.githubusercontent.com/93391058/206471581-a9f4f667-662a-4ab9-937b-08d90b825691.gif" width="50%">
 
 
 > ##### 1. canvas 위에 공의 움직임 나타내기
